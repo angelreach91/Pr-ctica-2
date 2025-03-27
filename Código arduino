@@ -1,0 +1,9 @@
+#include <DHT.h> // Incluimos la libreria para manejar el sensor DTH 
+
+// Definimos los pines con el tipo de sensor 
+#define DHTPIN 2 // Definimos el pin donde esta conectado el sensor DHT11 
+#define DHTTYPE DHT11 // Define el tipo de sensor que se utilizará en este caso el DHT11    
+DHT dht(DHTPIN, DHTTYPE); // Crea un objeto DHT con la configuración definida 
+
+#define LDR A0 // Define el pin analóigico donde estará conectado el LDR    
+#define VOLTAGE A1 // Define el pin analógico donde se mide el voltaje 
