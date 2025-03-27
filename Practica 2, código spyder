@@ -1,0 +1,10 @@
+#Código de spyder 
+import serial # Importa la libreria para la comunicación serial 
+import time # Permite manejar los retardos durante la ejecución 
+import pandas as pd # Importa la libreria para la manipulación y almacenamiento de datos en formato de tabla 
+
+# Configura la conexión serial
+ser = serial.Serial('COM????', 9600)  # Establece la conexión serial (Cambiando 'COM??? por el puerto) 
+time.sleep(2) # Se manda a dormir por 2 segundos para asegurar que esté funcionando 
+
+data = [] # Lista vacia para almacenar los datos recibidos 
