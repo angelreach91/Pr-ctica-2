@@ -1,4 +1,4 @@
-#Version 1.0.0
+//Version 1.0.0
 #include <DHT.h> // Incluimos la libreria para manejar el sensor DTH 
 
 // Definimos los pines con el tipo de sensor 
