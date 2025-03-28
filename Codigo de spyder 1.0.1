@@ -1,0 +1,22 @@
+""" 
+Codigo de spyder 1.0.1
+Se añadieron mas lineas al codigo para complementarlo y se preparo para comenzar a recibir datos
+"""
+import serial  # Importa la librería para la comunicación serial con Arduino
+import time  # Importa la librería para manejar tiempos de espera
+import csv  # Importa la librería para trabajar con archivos CSV
+
+# Configura la conexión serial con Arduino en el puerto COM3 a 9600 baudios
+ser = serial.Serial('COM3', 9600)  
+time.sleep(2)  # Espera 2 segundos para asegurar que la conexión esté estable
+
+# Nombre del archivo donde se guardarán los datos
+csv_file = 'datos_sensores.csv'
+
+# Abre el archivo CSV en modo escritura y crea el escritor de datos
+with open(csv_file, mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Humedad', 'Temperatura', 'Luz', 'Voltaje'])  # Escribe los encabezados en el archivo CSV
+
+    try:
+        while True:  # Bucle infinito para leer datos continuamente
