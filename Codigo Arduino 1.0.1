@@ -1,0 +1,21 @@
+# Version 1.0.1
+#Se añadieron mas lineas al codigo de arduino complementadolo para hacer un par de pruebas con el sensor DHT11.
+#include <DHT.h>  // Se incluye la librería para manejar el sensor DHT
+
+#define DHTPIN 2  // Se define el pin digital donde está conectado el sensor DHT11       
+#define DHTTYPE DHT11   // Se especifica el tipo de sensor DHT (DHT11)
+DHT dht(DHTPIN, DHTTYPE);   // Se crea un objeto "dht" para interactuar con el sensor
+
+const int luzPin = A0;   // Se define el pin analógico donde se conecta el sensor de luz
+const int voltPin = A1;   // Se define el pin analógico donde se mide el voltaje
+
+void setup() {  
+  Serial.begin(9600); // Se inicia la comunicación serial a 9600 baudios
+  dht.begin(); // Se inicializa el sensor DHT11
+}
+
+void loop() {
+  float h = dht.readHumidity(); // Se lee la humedad del sensor DHT11         
+  float t = dht.readTemperature();  // Se lee la temperatura del sensor DHT11     
+  int luzValue = analogRead(luzPin);  // Se obtiene el valor del sensor de luz (0-1023)   
+  float voltValue = analogRead(voltPin) * (5.0 / 1023.0);  // Se convierte la lectura del voltímetro a voltios
