@@ -1,4 +1,5 @@
 #Código de spyder 
+#Version 1.0.0
 import serial # Importa la libreria para la comunicación serial 
 import time # Permite manejar los retardos durante la ejecución 
 import pandas as pd # Importa la libreria para la manipulación y almacenamiento de datos en formato de tabla 
